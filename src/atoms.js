@@ -11,6 +11,11 @@ export const barbersState = atom({
   default: []
 })
 
+export const usernameState = atom({
+  key: "usernameState",
+  default: []
+})
+
 
 
 
