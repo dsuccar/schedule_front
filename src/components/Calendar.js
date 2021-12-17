@@ -29,7 +29,24 @@ export default function Calendar(){
   setCalendar(a)
   },[value])
   
+  function isSelected(day){
+    return value.isSame(day, "day")
+  }
 
+  function beforeToday(day) {
+    return day.isSame(new Date(), "day")
+  }
+
+  function isToday(day) {
+    return day.isSame(new Date(), "day")
+  }
+
+  function dayStyles(day){
+    if (beforeToday(day)) return "before"
+    if (isSelected(day)) return "selected"
+    if (isToday(day)) return "today"
+    return ""
+  }
 
 console.log(value)
   return(
@@ -40,7 +57,7 @@ console.log(value)
           {week.map ((day) => ( 
             <div className= "day" onClick= {() => setValue(day)}> 
               <div 
-                className= {value.isSame(day, "day") ? "selected" : ""}
+                className= {dayStyles(day)}
                 >{day.format("D").toString()}</div>
             </div>
             ))}

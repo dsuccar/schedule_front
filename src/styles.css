@@ -1,9 +1,22 @@
 .calendar .day {
   position: relative;
-  width: calc(100%/7);
+  width: 40px;
   height: 44px;
   display: inline-block;
   background-color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 1;
+  text-align: center;
+}
+
+.calendar .selected{
+  position: relative;
+  width: 30px;
+  height: 44px;
+  display: inline-block;
+  background-color: gray;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
